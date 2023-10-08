@@ -1,9 +1,13 @@
+import HeroLogo from "./components/HeroLogo"
+import NavBar from "./components/NavBar"
+import StickyLinks from "./components/StickyLinks"
 
 function App() {
-
   return (
-    <div>
-      <h2 className="underline text-3xl">Test</h2>
+    <div className="flex flex-col items-center min-h-screen">
+      <NavBar />
+      <HeroLogo />
+      <StickyLinks />
     </div>
   )
 }
