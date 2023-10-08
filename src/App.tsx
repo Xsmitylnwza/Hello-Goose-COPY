@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     scrollYProgress.onChange((latest) => {
-      if (latest > 0.3) {
+      if (latest > 0.5) {
         setIsLogoVisible(true);
       } else {
         setIsLogoVisible(false);
@@ -21,7 +21,7 @@ function App() {
   }, [scrollYProgress]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center">
+    <div className="flex flex-col items-center min-h-screen">
       <NavBar isLogoVisible={isLogoVisible} />
       <HeroBanner />
       <About />
