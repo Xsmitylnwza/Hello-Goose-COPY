@@ -3,7 +3,7 @@ import NavMenu from "./NavMenu";
 const NavBar = () => {
   return (
     <div className="fixed top-0 w-full">
-      <div className="flex px-[7.5rem] py-4 flex-between">
+      <div className="flex px-[4.5rem] py-4 flex-between">
         {/* <img
           src="../public/images/Logo.PNG"
           alt="Logo"
