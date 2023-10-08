@@ -1,9 +1,8 @@
-
 import HeroLogo from "./HeroLogo.tsx";
 
 const HeroBanner = () => {
   return (
-    <div className="min-h-screen flex-center-col">
+    <div className="flex-center-col min-h-screen">
       <HeroLogo />
     </div>
   );

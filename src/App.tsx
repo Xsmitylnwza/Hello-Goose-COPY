@@ -1,9 +1,9 @@
-import { useScroll } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import About from './components/About';
-import HeroBanner from './components/HeroBanner';
-import NavBar from './components/Nav';
-import StickyLinks from './components/Social';
+import { useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
+import About from "./components/About";
+import HeroBanner from "./components/HeroBanner";
+import NavBar from "./components/Nav";
+import StickyLinks from "./components/Social";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -21,7 +21,7 @@ function App() {
   }, [scrollYProgress]);
 
   return (
-    <div className='flex flex-col items-center min-h-screen'>
+    <div className="flex min-h-screen flex-col items-center">
       <NavBar isLogoVisible={isLogoVisible} />
       <HeroBanner />
       <About />
