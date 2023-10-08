@@ -1,4 +1,4 @@
-import SocialLink from "./SocialLink";
+import SocialLink from "./SocialLink.tsx";
 import { BsInstagram } from "react-icons/bs";
 
 const StickyLinks = () => {

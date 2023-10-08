@@ -1,12 +1,14 @@
-import HeroLogo from "./components/HeroLogo"
-import NavBar from "./components/NavBar"
-import StickyLinks from "./components/StickyLinks"
+import About from "./components/About"
+import HeroBanner from "./components/HeroBanner"
+import NavBar from "./components/Nav"
+import StickyLinks from "./components/Social"
 
 function App() {
   return (
     <div className="flex flex-col items-center min-h-screen">
       <NavBar />
-      <HeroLogo />
+      <HeroBanner />
+      <About />
       <StickyLinks />
     </div>
   )
