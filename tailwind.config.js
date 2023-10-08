@@ -47,6 +47,10 @@ export default {
           900: '#232a42',
         },
       },
+      backgroundImage: {
+        'background-Hero': "url('/images/hero/Bg-homepage.PNG')",
+        'goose-Hero': "url('/images/hero/goose-element_0004_Layer-6.png')",
+      },
     },
   },
   plugins: [],
