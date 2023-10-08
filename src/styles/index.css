@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply main-gradient-bg
+}
+
+.main-gradient-bg {
+    @apply bg-custom-blue bg-gradient-to-b from-custom-pink to-custom-pink-transparent bg-cover
+}
+
+.flex-center {
+    @apply flex justify-center items-center
+}
+
+.flex-center-col {
+    @apply flex flex-col justify-center items-center
+}
+
+.flex-around {
+    @apply flex justify-around items-center
+}
+
+.flex-between {
+    @apply flex justify-between items-center
+}
+
+.flex-start {
+    @apply flex justify-start items-center
+}
