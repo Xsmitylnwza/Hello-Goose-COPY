@@ -18,7 +18,7 @@ const NavBar = ({ isLogoVisible = false, ...props }: NavbarProps) => {
         props.className,
         isLogoVisible ? "py-12" : "py-0",
         "fixed left-0 top-0 z-50 flex h-20 w-full items-center justify-between px-8 sm:h-12 md:h-16",
-        "transition-all duration-300 ease-in-out px-[5rem]",
+        "transition-all duration-300 ease-in-out px-[1rem]",
       )}
       {...props}
     >

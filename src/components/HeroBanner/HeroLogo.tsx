@@ -5,7 +5,7 @@ const HeroLogo = () => {
     hidden: { opacity: 0, y: 100, scale: 0 },
     visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: 'backInOut' } },
   }
-  return <motion.img src="/images/logo.webp" alt="Logo" className="h-full w-[55%]" variants={fadeIn} initial="hidden" animate="visible" />;
+  return <motion.img src="/images/logo.webp" alt="Logo" className="h-full md:w-[2/3] w-[65%] z-10" variants={fadeIn} initial="hidden" animate="visible" />;
 };
 
 export default HeroLogo;
