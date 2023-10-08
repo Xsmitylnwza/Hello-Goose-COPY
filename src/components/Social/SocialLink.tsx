@@ -1,10 +1,11 @@
 type SocialLinkProps = {
   icon: React.ReactNode;
+  link?: string
 };
 
-const SocialLink = ({ icon }: SocialLinkProps) => {
+const SocialLink = ({ icon, link="" }: SocialLinkProps) => {
   return (
-    <a href="" className="w-12 h-12 bg-white rounded-full flex-center">
+    <a href={link} className="w-12 h-12 bg-white rounded-full flex-center">
       {icon}
     </a>
   );
