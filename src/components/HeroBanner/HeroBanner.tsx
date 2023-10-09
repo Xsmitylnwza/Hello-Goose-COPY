@@ -12,11 +12,12 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
       offset: ["start start", "end start"],
     });
     const transfromY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+    const gooseScale = useTransform(scrollYProgress, [0, 1], [1, 0.65]);
     return (
       <div ref={ref} className={className} {...props}>
         <div
           ref={containerRef}
-          className="flex-center-col relative min-h-screen bg-background-Hero bg-cover bg-bottom bg-no-repeat"
+          className="relative min-h-screen bg-bottom bg-no-repeat bg-cover flex-center-col bg-background-Hero"
         >
           <HeroLogo translateY={transfromY} />
           <img
@@ -28,7 +29,7 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
             className="absolute right-[15%] hidden w-1/6 md:bottom-[2%] md:block lg:bottom-[5%]"
             src="/images/hero/goose-element_0004_Layer-6.png"
             alt="goose hero"
-            style={{ y: transfromY, x: transfromY }}
+            style={{ y: transfromY, x: transfromY, scale: gooseScale }}
           />
           <img
             className="absolute bottom-0 w-screen"
