@@ -11,7 +11,10 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
       target: containerRef,
       offset: ["start start", "end start"],
     });
-    const transfromY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+    const cloudVariant = {
+      floating: { y: [10, -10], transition: { y: { yoyo: Infinity, duration: .5, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" } } }
+    };
+    const transfromY = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const gooseScale = useTransform(scrollYProgress, [0, 1], [1, 0.65]);
     return (
       <div ref={ref} className={className} {...props}>
@@ -20,10 +23,13 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
           className="relative min-h-screen bg-bottom bg-no-repeat bg-cover flex-center-col bg-background-Hero"
         >
           <HeroLogo translateY={transfromY} />
-          <img
+          <motion.img
             className="absolute top-0 w-screen"
             src="/images/hero/Cloud.PNG"
             alt="cloud"
+            variants={cloudVariant}
+            initial="floating"
+            animate="floating"
           />
           <motion.img
             className="absolute right-[15%] hidden w-1/6 md:bottom-[2%] md:block lg:bottom-[5%]"

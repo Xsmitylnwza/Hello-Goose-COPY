@@ -18,7 +18,7 @@ const NavBar = ({ isLogoVisible = false, ...props }: NavbarProps) => {
         props.className,
         isLogoVisible ? "py-12" : "py-0",
         "fixed left-0 top-0 z-50 flex h-20 w-full items-center justify-between px-8 sm:h-12 md:h-16",
-        "px-[1rem] transition-all duration-300 ease-in-out",
+        "px-[2rem] transition-all duration-300 ease-in-out",
       )}
       {...props}
     >
@@ -41,7 +41,7 @@ const NavBar = ({ isLogoVisible = false, ...props }: NavbarProps) => {
           )}
           {isLogoVisible && (
             <motion.button
-              className="left-10 h-20 w-72 origin-top-left opacity-100 hover:-translate-y-1 sm:h-12 sm:w-44 md:left-5 md:h-16 md:w-56 2xl:scale-125"
+              className="h-20 origin-top-left opacity-100 left-10 w-72 hover:-translate-y-1 sm:h-12 sm:w-44 md:left-5 md:h-16 md:w-56 2xl:scale-125"
               style={{
                 backgroundImage: "url('/images/logo.webp')",
                 backgroundSize: "60%",
