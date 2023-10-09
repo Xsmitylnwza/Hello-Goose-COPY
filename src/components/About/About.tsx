@@ -12,7 +12,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(
     return (
       <div
         className={twMerge(
-          "flex-center-col  z-1 relative min-h-screen   bg-background-about  bg-cover bg-bottom bg-no-repeat ",
+          "flex-center-col  z-1 relative min-h-screen   bg-background-about  bg-cover bg-center bg-no-repeat ",
           className,
         )}
         {...props}
