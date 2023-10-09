@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { NavLinks } from "../../types";
 import { isActive } from "../../utils/active";
 
@@ -31,6 +30,10 @@ const NavItems = () => {
 
   const [toggle, setToggle] = useState(false);
 
+  const toggleNav = useCallback(() => {
+    setToggle(!toggle);
+  }, [toggle]);
+
   return (
     <>
       <ul className="hidden h-full items-center justify-end space-x-[70px] lg:flex">
@@ -54,17 +57,17 @@ const NavItems = () => {
       <div className="flex h-full items-center justify-end space-x-[70px] lg:hidden">
         <button
           className="relative font-cherry text-[48px] uppercase text-black"
-          onClick={() => setToggle(!toggle)}
+          onClick={toggleNav}
         >
           =
         </button>
       </div>
 
       {toggle && (
-        <motion.div className="fixed left-0 top-0 z-50 flex w-full flex-col items-center justify-center rounded-b-xl bg-white bg-opacity-50 py-10 drop-shadow-2xl filter backdrop-blur-sm transition-all duration-500 ease-in-out">
+        <div className="fixed left-0 top-0 z-50 flex w-full flex-col items-center justify-center rounded-b-xl bg-white bg-opacity-50 py-10 drop-shadow-2xl filter backdrop-blur-sm transition-all duration-500 ease-in-out lg:hidden">
           <button
             className="text-3xl absolute right-5 top-5 font-cherry text-paragraph-header text-black"
-            onClick={() => setToggle(!toggle)}
+            onClick={toggleNav}
           >
             X
           </button>
@@ -85,7 +88,7 @@ const NavItems = () => {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       )}
     </>
   );
