@@ -10,7 +10,7 @@ const SocialLink = ({ href, icon, className, ...props }: SocialLinkProps) => {
   return (
     <button
       className={twMerge(
-        "flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-white text-black hover:bg-opacity-80",
+        "flex h-[3.5rem] w-[3.5rem] cursor-pointer items-center justify-center rounded-full bg-white text-black hover:bg-opacity-80 transition duration-300",
         className,
       )}
       {...props}
