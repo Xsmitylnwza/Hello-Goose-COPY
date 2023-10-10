@@ -1,14 +1,25 @@
-import React, { ImgHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
-const WinkEffect: React.FC<ImgHTMLAttributes<HTMLImageElement>> = ({
-  className,
-  ...rest
-}) => {
+import { HTMLMotionProps, motion } from "framer-motion";
+
+type WinkEffectProps = {
+  delay?: number;
+} & HTMLMotionProps<"img">;
+
+const WinkEffect: React.FC<WinkEffectProps> = ({ delay, className, ...rest }) => {
+  const winkVariants = {
+    wink: {
+      scale: [1, 1.2, 1],
+      transition: { duration: 0.5, repeat: Infinity, delay: delay || 0 },
+    },
+  };
   return (
-    <img
+    <motion.img
       src="/images/about/Wink.PNG"
       className={twMerge("absolute", className)}
-      {...rest} //
+      variants={winkVariants}
+      initial="wink"
+      animate="wink"
+      {...rest}
     />
   );
 };
