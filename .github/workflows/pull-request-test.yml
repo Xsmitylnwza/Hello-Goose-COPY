@@ -23,7 +23,7 @@ jobs:
           node-version: "16"
 
       - name: Yarn install
-        run: yarn install
+        run: yarn install --update-checksums
 
       - name: Lint test
         run: yarn run lint
