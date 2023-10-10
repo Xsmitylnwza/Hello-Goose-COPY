@@ -20,7 +20,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(
       >
         <CloudImg />
         <TitleAbout />
-        <div className=" w-screen  flex-row px-0 md:px-10">
+        <div className=" w-screen  flex-row px-0 lg:px-10">
           <div className="about-data relative  flex flex-col-reverse items-center justify-center md:flex-row md:items-stretch ">
             <GooseImg />
             <AboutText />
