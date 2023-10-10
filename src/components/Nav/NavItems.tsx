@@ -52,7 +52,7 @@ const NavItems = ({ navTo }: NavItemsProps) => {
         {navLinks.map((navLink) => (
           <li
             key={navLink.name}
-            className="relative font-cherry text-paragraph-header uppercase text-white"
+            className="relative text-white uppercase font-cherry text-paragraph-header"
           >
             <div className="cursor-pointer" onClick={() => navTo(navLink.path)}>
               {navLink.name}
@@ -61,36 +61,30 @@ const NavItems = ({ navTo }: NavItemsProps) => {
           </li>
         ))}
       </ul>
-
+      {/* Mobile Nav */}
       <div className="flex h-full items-center justify-end space-x-[70px] lg:hidden">
         <button
-          className="relative font-cherry text-[48px] uppercase text-black"
+          className="relative font-cherry text-[48px] uppercase text-black z-[60] text-3xl transition-all duration-400"
           onClick={toggleNav}
         >
-          =
+          {toggle ? "X" : "="}
         </button>
       </div>
       <AnimatePresence>
         {toggle && (
           <motion.div
-            className="fixed left-0 top-0 z-50 flex w-full flex-col items-center justify-center rounded-b-xl bg-white bg-opacity-50 py-10 drop-shadow-2xl filter backdrop-blur-sm transition-all duration-500 ease-in-out lg:hidden"
+            className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-full py-10 ease-in-out bg-white bg-opacity-50 text-paragraph-header rounded-b-xl drop-shadow-2xl filter backdrop-blur-sm lg:hidden"
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { duration: 0.4, ease: "easeInOut" },
+              transition: { duration: 0.5, ease: "easeInOut" },
             }}
             exit={{
               opacity: 0,
-              y: -400,
+              y: -200,
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
           >
-            <button
-              className="text-3xl absolute right-5 top-5 font-cherry text-paragraph-header text-black"
-              onClick={toggleNav}
-            >
-              X
-            </button>
             <motion.ul
               className="flex flex-col items-center justify-center space-y-8"
               variants={fadeIn}
@@ -100,7 +94,7 @@ const NavItems = ({ navTo }: NavItemsProps) => {
               {navLinks.map((navLink, index) => (
                 <motion.li
                   key={navLink.name}
-                  className="relative font-cherry text-paragraph-header uppercase text-black"
+                  className="relative text-black uppercase font-cherry text-paragraph-header"
                   variants={fadeIn}
                   initial="hidden"
                   animate="visible"
