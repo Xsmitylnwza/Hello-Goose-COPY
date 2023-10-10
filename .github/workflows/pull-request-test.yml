@@ -20,14 +20,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "16"
 
-      - name: Backend Install
+      - name: Yarn install
         run: yarn install
 
-      - name: Backend Lint
+      - name: Lint test
         run: yarn run lint
 
-      - name: Build Node.js Project
+      - name: Build Node.js Project For Testing
         if: ${{ success() }}
         run: yarn run build
