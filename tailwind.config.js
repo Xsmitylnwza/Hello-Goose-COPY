@@ -48,9 +48,10 @@ export default {
         },
       },
       backgroundImage: {
-        "background-Hero": "url('/images/hero/SuperFinal-bg.PNG')",
-        "goose-Hero": "url('/images/hero/goose-element_0004_Layer-6.png')",
+        "background-hero": "url('/images/hero/SuperFinal-bg.PNG')",
+        "goose-hero": "url('/images/hero/goose-element_0004_Layer-6.png')",
         "background-about": "url('/images/about/Background.PNG')",
+        "background-team": "url('/images/team/background.png')",
       },
     },
   },
