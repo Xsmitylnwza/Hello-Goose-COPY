@@ -12,7 +12,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(
     return (
       <div
         className={twMerge(
-          "flex-center-col  z-1 relative min-h-screen   bg-background-about  bg-cover bg-center bg-no-repeat ",
+          " flex-center-col z-1  relative max-h-max  min-h-screen bg-background-about bg-cover   bg-center   bg-no-repeat py-40 md:min-h-screen md:py-0",
           className,
         )}
         {...props}
@@ -20,8 +20,8 @@ const About = forwardRef<HTMLDivElement, AboutProps>(
       >
         <CloudImg />
         <TitleAbout />
-        <div className=" w-screen  flex-col px-10">
-          <div className="about-data  flex flex-row">
+        <div className=" w-screen  flex-row px-0 md:px-10">
+          <div className="about-data relative  flex flex-col-reverse items-center justify-center md:flex-row md:items-stretch ">
             <GooseImg />
             <AboutText />
           </div>
