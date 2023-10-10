@@ -31,11 +31,11 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
       <div ref={ref} className={className} {...props}>
         <div
           ref={containerRef}
-          className="flex-center-col bg-background-hero relative min-h-screen bg-cover bg-bottom bg-no-repeat"
+          className="relative min-h-screen bg-bottom bg-no-repeat bg-cover flex-center-col bg-background-hero"
         >
           <HeroLogo translateY={transfromY} />
           <motion.img
-            className="absolute top-2 w-screen"
+            className="absolute w-screen top-2"
             src="/images/hero/Cloud.PNG"
             alt="cloud"
             variants={cloudVariant}

@@ -1,8 +1,8 @@
-import { MotionValue, motion } from 'framer-motion';
+import { HTMLMotionProps, MotionValue, motion } from 'framer-motion';
 
 type HeroLogoProps = {
   translateY: MotionValue<number>;
-};
+} & HTMLMotionProps<"img">;
 
 const HeroLogo = ({ translateY }: HeroLogoProps) => {
   const logoVariants = {
