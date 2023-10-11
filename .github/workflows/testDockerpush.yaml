@@ -30,8 +30,7 @@ jobs:
         uses: docker/tag-action@v1
         with:
           image: my-nginx-project:latest
-          tags:
-            - my-nginx-project:v${{ steps.increment-version.outputs.new-version }}
+          tags: my-nginx-project:v${{ steps.increment-version.outputs.new-version }}
 
       - name: Push the image
         uses: docker/push-action@v2
