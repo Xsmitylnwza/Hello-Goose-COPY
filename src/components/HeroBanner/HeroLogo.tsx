@@ -21,5 +21,6 @@ const HeroLogo = ({ translateY }: HeroLogoProps) => {
     style={{ y: translateY }} 
     whileHover="handleOnHover" 
   />;
+};
 
 export default HeroLogo;
