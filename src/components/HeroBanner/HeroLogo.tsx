@@ -23,4 +23,5 @@ const HeroLogo = ({ translateY }: HeroLogoProps) => {
   />;
 };
 
+let xsmity;
 export default HeroLogo;
