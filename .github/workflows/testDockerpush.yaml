@@ -1,0 +1,44 @@
+name: Build and push Docker image
+
+on:
+  push:
+    branches: [yeahbro]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install the project's dependencies
+        run: yarn install
+      - name: Build file project with yarn
+        run: yarn build
+
+      - name: Build the new image
+        run: docker build -t my-nginx-project:dev .
+
+      - name: Tag the image
+        uses: docker/tag-action@v1
+        with:
+          image: my-nginx-project:latest
+          tags:
+            - my-nginx-project:v${{ steps.increment-version.outputs.new-version }}
+
+      - name: Push the image
+        uses: docker/push-action@v2
+        with:
+          image: my-nginx-project:latest
+
+      - name: Increment version
+        uses: actions/increment-version-action@v1
+        with:
+          format: 'v%s'
