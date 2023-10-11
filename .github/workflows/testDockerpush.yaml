@@ -42,7 +42,7 @@ jobs:
           push: true
           tags: xsmity01/testautobuild:latest
 
-      - name: push docker image tag:VERSIOn
+      - name: push docker image tag:VERSION
         uses: docker/build-push-action@v5
         with:
           context: .
