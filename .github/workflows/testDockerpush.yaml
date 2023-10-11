@@ -40,6 +40,6 @@ jobs:
         with:
           context: .
           push: true
-          tags:
-            - xsmity01/testautobuild:latest
-            - xsmity01/testautobuild:dev:v${{github.event.commits[0].message}}
+          tags: |
+            xsmity01/testautobuild:latest
+            xsmity01/testautobuild:dev:${{ github.run_number }}
