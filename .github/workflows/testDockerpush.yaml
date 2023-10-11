@@ -41,4 +41,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: xsmity01/testautobuild:lasted
+          tags: xsmity01/testautobuild:latest
