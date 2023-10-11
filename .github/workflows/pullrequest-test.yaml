@@ -25,5 +25,8 @@ jobs:
       - name: Yarn install
         run: yarn install --update-checksums
 
+      - name: Yarn build
+        run: yarn build
+        
       - name: Lint test (Testing Entire Code)
         run: yarn run lint
