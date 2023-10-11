@@ -19,7 +19,7 @@ jobs:
         run: npm install -g yarn
 
       - name: Install the project's dependencies
-        run: yarn install
+        run: yarn install --update-checksums
       - name: Build file project with yarn
         run: yarn build
 
