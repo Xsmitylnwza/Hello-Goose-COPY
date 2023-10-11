@@ -35,11 +35,16 @@ jobs:
           username: ${{secrets.DOCKER_HUB_USERNAME }}
           password: ${{secrets.DOCKERHUB_TOKEN}}
 
-      - name: Build AND PUSH
+      - name: Build AND PUSH LASTEST
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags:
-            - xsmity01/testautobuild:latest
-            - xsmity01/testautobuild:dev:v${{github.event.commits[0].message}}
+          tags: xsmity01/testautobuild:latest
+
+      - name: Build AND PUSH TAG
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: xsmity01/testautobuild:version${{ github.run_number }}
