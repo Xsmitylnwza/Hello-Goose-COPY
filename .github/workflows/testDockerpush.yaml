@@ -2,7 +2,7 @@ name: Build and push Nginx image with build file
 
 on:
   push:
-    branches: [yeahbro]
+    branches: [main-test-merge]
 
 jobs:
   build-and-push:
@@ -34,7 +34,6 @@ jobs:
         with:
           username: ${{secrets.DOCKER_HUB_USERNAME }}
           password: ${{secrets.DOCKERHUB_TOKEN}}
-
 
       - name: Build AND PUSH
         uses: docker/build-push-action@v5
