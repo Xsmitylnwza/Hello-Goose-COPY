@@ -41,4 +41,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: title20306/helloautomate:latest
+          tags: xsmity01/testautobuild:lasted
