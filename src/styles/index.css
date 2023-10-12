@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Itim&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Itim&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,26 +8,31 @@ body {
   @apply main-gradient-bg;
 }
 
+body {
+  font-family: "Itim", sans-serif;
+  font-family: "Cherry Bomb One", cursive;
+}
+
 .main-gradient-bg {
   @apply bg-custom-blue bg-gradient-to-b from-custom-pink to-custom-pink-transparent bg-cover;
 }
 
 .flex-center {
-  @apply flex justify-center items-center;
+  @apply flex items-center justify-center;
 }
 
 .flex-center-col {
-  @apply flex flex-col justify-center items-center;
+  @apply flex flex-col items-center justify-center;
 }
 
 .flex-around {
-  @apply flex justify-around items-center;
+  @apply flex items-center justify-around;
 }
 
 .flex-between {
-  @apply flex justify-between items-center;
+  @apply flex items-center justify-between;
 }
 
 .flex-start {
-  @apply flex justify-start items-center;
+  @apply flex items-center justify-start;
 }
