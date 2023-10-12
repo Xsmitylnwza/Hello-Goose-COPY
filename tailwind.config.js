@@ -21,6 +21,10 @@ export default {
         "custom-pink": "#F6D5E6",
         "custom-pink-transparent": "rgba(250, 128, 179, 0.00)",
       },
+      screens: {
+        mobileM: "375px",
+        mobileL: "425px",
+      },
       colors: {
         primary: {
           50: "#fcf1f7",
