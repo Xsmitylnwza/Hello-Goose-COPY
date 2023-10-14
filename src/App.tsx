@@ -32,9 +32,9 @@ function App() {
         "/game": gameRef,
       };
       const offsetTop = refs[path].current?.offsetTop;
-      if (offsetTop !== undefined)
-        window.scrollTo({ top: offsetTop, behavior: "smooth" });
-      window.scrollTo({ top: offsetTop!, behavior: "smooth" });
+      if (offsetTop !== undefined) {
+        window.scrollTo({ top: offsetTop!, behavior: "smooth" });
+      }
     },
     [setPage],
   );
