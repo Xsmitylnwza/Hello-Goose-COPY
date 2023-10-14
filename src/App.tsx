@@ -23,31 +23,17 @@ function App() {
   const navTo = useCallback(
     (path: string) => {
       setPage(path);
-
-      let offsetTop: number | undefined = 0;
-      switch (path) {
-        case "/":
-          offsetTop = heroRef.current?.offsetTop;
-          break;
-        case "/about":
-          offsetTop = aboutRef.current?.offsetTop;
-          break;
-        case "/teams":
-          offsetTop = teamRef.current?.offsetTop;
-          break;
-        case "/events":
-          offsetTop = eventRef.current?.offsetTop;
-          break;
-        case "/faqs":
-          offsetTop = faqRef.current?.offsetTop;
-          break;
-        case "/game":
-          offsetTop = gameRef.current?.offsetTop;
-          break;
-        default:
-          break;
-      }
-
+      const refs: { [key: string]: React.RefObject<HTMLDivElement> } = {
+        "/": heroRef,
+        "/about": aboutRef,
+        "/teams": teamRef,
+        "/events": eventRef,
+        "/faqs": faqRef,
+        "/game": gameRef,
+      };
+      const offsetTop = refs[path].current?.offsetTop;
+      if (offsetTop !== undefined)
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
       window.scrollTo({ top: offsetTop!, behavior: "smooth" });
     },
     [setPage],
