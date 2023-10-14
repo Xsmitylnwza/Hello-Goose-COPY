@@ -18,10 +18,15 @@ const About = forwardRef<HTMLDivElement, AboutProps>(
         {...props}
         ref={ref}
       >
+        <img
+          className="absolute top-0 w-screen"
+          src="/images/about/Flip-rock.PNG"
+          alt="rock"
+        />
         <CloudImg />
         <TitleAbout />
-        <div className=" w-screen  flex-row px-0 lg:px-10">
-          <div className="about-data relative  flex flex-col-reverse items-center justify-center md:flex-row md:items-stretch ">
+        <div className="flex-row w-screen px-0 lg:px-10">
+          <div className="relative flex flex-col-reverse items-center justify-center about-data md:flex-row md:items-stretch ">
             <GooseImg />
             <AboutText />
           </div>
