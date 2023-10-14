@@ -7,7 +7,7 @@ type WinkEffectProps = {
 
 const WinkEffect: React.FC<WinkEffectProps> = ({
   delay,
-  className,
+  className, 
   ...rest
 }) => {
   const winkVariants = {
