@@ -6,6 +6,9 @@ import NavBar from "./components/Nav";
 import StickyLinks from "./components/Social";
 import Team from "./components/Team";
 import usePageStore from "./stores/pageStore";
+import Events from "./components/Events";
+import Faqs from "./components/Faqs";
+import Game from "./components/Game";
 
 function App() {
   const { setPage } = usePageStore();
@@ -13,6 +16,9 @@ function App() {
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
+  const eventRef = useRef<HTMLDivElement>(null);
+  const gameRef = useRef<HTMLDivElement>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
 
   const navTo = useCallback(
     (path: string) => {
@@ -28,6 +34,15 @@ function App() {
           break;
         case "/teams":
           offsetTop = teamRef.current?.offsetTop;
+          break;
+        case "/events":
+          offsetTop = eventRef.current?.offsetTop;
+          break;
+        case "/faqs":
+          offsetTop = faqRef.current?.offsetTop;
+          break;
+        case "/game":
+          offsetTop = gameRef.current?.offsetTop;
           break;
         default:
           break;
@@ -62,30 +77,37 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const aboutOffsetTop = aboutRef.current?.offsetTop;
-      const teamOffsetTop = teamRef.current?.offsetTop;
+      const offsets = [
+        { page: "/", ref: heroRef },
+        { page: "/about", ref: aboutRef },
+        { page: "/teams", ref: teamRef },
+        { page: "/events", ref: eventRef },
+        { page: "/faqs", ref: faqRef },
+        { page: "/game", ref: gameRef },
+      ];
       const currentScroll = window.scrollY + window.innerHeight / 2;
 
-      if (currentScroll >= aboutOffsetTop! && currentScroll < teamOffsetTop!) {
-        setPage("/about");
-      } else if (currentScroll >= teamOffsetTop!) {
-        setPage("/teams");
-      } else {
-        setPage("/");
+      for (let i = offsets.length - 1; i >= 0; i--) {
+        const offsetTop = offsets[i].ref.current?.offsetTop || 0;
+        if (currentScroll >= offsetTop) {
+          setPage(offsets[i].page);
+          break;
+        }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [setPage]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center overflow-hidden">
+    <div className="flex flex-col items-center min-h-screen overflow-hidden">
       <NavBar isLogoVisible={isLogoVisible} navTo={navTo} />
       <HeroBanner ref={heroRef} />
       <About ref={aboutRef} />
       <Team ref={teamRef} />
+      <Events ref={eventRef} />
+      <Faqs ref={faqRef} />
+      <Game ref={gameRef} />
       <StickyLinks />
     </div>
   );
