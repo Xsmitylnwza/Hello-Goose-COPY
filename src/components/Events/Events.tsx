@@ -8,8 +8,8 @@ const Events = forwardRef<HTMLDivElement>((props, ref) => {
     <div
       ref={ref}
       {...props}
-      className="flex-center relative z-[-5] flex min-h-screen min-w-full flex-col overflow-hidden bg-background-event bg-cover
-       bg-[center_top_-15rem] bg-no-repeat md:justify-center  md:pb-0 mobileL:justify-end mobileL:pb-5"
+      className="flex-center justify-cneter relative z-[-5] flex min-h-screen min-w-full flex-col justify-center overflow-hidden 
+       bg-background-event bg-cover bg-[center_top_-15rem]  bg-no-repeat md:pb-0 mobileL:pb-5"
     >
       <EventsMobile />
       <EventsDesktop />

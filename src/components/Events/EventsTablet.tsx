@@ -12,7 +12,7 @@ const EventsTablet = () => {
   return (
     <div
       ref={eventRef}
-      className="relative mb-[15%] w-[90%]  md:hidden  mobileS:hidden TabletV:block"
+      className="relative flex w-[90%]   md:hidden  mobileS:hidden TabletV:block"
     >
       <img
         className="z-1 "
