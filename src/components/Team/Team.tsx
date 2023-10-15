@@ -19,13 +19,16 @@ const Team = forwardRef<HTMLDivElement, TeamProps>(
     return (
       <div
         className={twMerge(
-          "flex-center-col z-1 bg-background-team relative min-h-screen w-full bg-cover bg-center bg-no-repeat",
+          "flex-center-col z-1 relative min-h-screen w-full bg-background-team bg-cover bg-center bg-no-repeat",
           className,
         )}
         {...props}
         ref={ref}
       >
-        <TeamDetails team={previewTeamType} />
+        <div className="p-4 sm:p-8">
+          <TeamDetails team={previewTeamType} />
+        </div>
+        <div className="my-4 sm:my-8" />
         <TeamList
           onPreview={handlePreviewTeamType}
           previewTeamType={previewTeamType}

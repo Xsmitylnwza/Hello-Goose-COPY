@@ -8,4 +8,5 @@ export type TeamType = {
   name: string;
   description: string;
   image: string;
+  sit: string;
 };

@@ -7,20 +7,21 @@ type TeamDetailsProps = {
 const TeamDetails = ({ team }: TeamDetailsProps) => {
   if (!team) return null;
   return (
-    <>
-      <h1 className="mb-4 text-center font-cherry text-header font-bold text-white">
+    <div>
+      <h1 className="mt-6 w-full text-center font-cherry text-[32px] font-bold text-white">
         {team.name}
       </h1>
-      <div className="relative my-10 flex h-80 w-3/4 flex-col items-center justify-center rounded-3xl bg-white bg-opacity-75 py-10 pl-10 pr-60">
-        <p className="font-itim">{team.description}</p>
+      <div className="relative mt-4 grid h-full w-full grid-cols-12 gap-4 p-4">
+        <div className="relative z-30 col-span-9 flex h-full max-h-[300px] min-h-[300px] w-full items-center overflow-auto rounded-3xl bg-white bg-opacity-75 p-4 pr-10 sm:pr-0">
+          <p className="z-50 font-itim">{team.description}</p>
+        </div>
         <img
-          src={team.image}
+          className="absolute -right-7 top-1/2 z-30 w-3/6 -translate-y-1/2 transform drop-shadow-lg filter sm:w-2/6 xl:scale-50"
+          src={team.sit}
           alt={team.name}
-          className="absolute bottom-0 right-0 z-10 w-1/4"
         />
-        <div className="absolute bottom-0 right-0 h-24 w-1/4 rounded-full bg-blue-500 bg-opacity-75" />
       </div>
-    </>
+    </div>
   );
 };
 
