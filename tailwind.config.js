@@ -24,6 +24,10 @@ export default {
       screens: {
         mobileM: "375px",
         mobileL: "425px",
+        mobileS: "0px",
+        TabletV: {
+          raw: "((min-width: 768px) and (min-height: 1024px))",
+        },
       },
       colors: {
         primary: {

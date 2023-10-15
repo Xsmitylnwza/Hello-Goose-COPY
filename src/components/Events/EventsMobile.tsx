@@ -8,7 +8,7 @@ const EventsMobile = () => {
     { postion: "bottom-[4%] left-[6%] w-[15%]", colorFlower: "purple" },
   ];
   return (
-    <div className="flex-center relative h-max mobileL:hidden">
+    <div className="flex-center relative h-max md:hidden">
       <img className="w-[92%]" src="/images/events/eventMobile.png" alt="" />
       {flowers.map(({ postion, colorFlower }) => (
         <Flower className={postion} colorFlower={colorFlower} />
