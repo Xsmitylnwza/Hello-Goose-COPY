@@ -24,6 +24,10 @@ export default {
       screens: {
         mobileM: "375px",
         mobileL: "425px",
+        mobileS: "0px",
+        TabletV: {
+          raw: "((min-width: 768px) and (min-height: 1024px))",
+        },
       },
       colors: {
         primary: {
@@ -56,6 +60,9 @@ export default {
         "goose-hero": "url('/images/hero/goose-element_0004_Layer-6.png')",
         "background-about": "url('/images/about/Background.PNG')",
         "background-team": "url('/images/team/background.png')",
+        "background-event": "url('/images/events/top.png')",
+        "background-game": "url('/images/game/Bg Mobile นอน.png')",
+        "background-faqs":"url('/images/faqs/Bg.PNG')"
       },
     },
   },
