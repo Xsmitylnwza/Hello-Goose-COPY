@@ -10,12 +10,12 @@ const EventsTablet = () => {
   return (
     <div className="mobileS:hidden TabletV:block  relative bottom-0  w-[90%]  md:hidden ">
       <img
-        className="mx-auto    "
+        className="mx-auto "
         src="/images/events/eventTablet.png"
         alt=""
       />
-      {flowers.map(({ postion, colorFlower }) => (
-        <Flower className={postion} colorFlower={colorFlower} />
+      {flowers.map(({ postion, colorFlower }, index) => (
+        <Flower className={postion} colorFlower={colorFlower} key={index}/>
       ))}
     </div>
   );
