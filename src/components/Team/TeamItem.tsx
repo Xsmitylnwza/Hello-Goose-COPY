@@ -10,13 +10,18 @@ const TeamItem = ({ team, isPreview = false }: TeamItemProps) => {
   return (
     <div
       className={twMerge(
-        "flex h-full w-full flex-col items-center justify-center",
-        isPreview ? "bg-white" : "bg-transparent",
+        "relative flex aspect-square cursor-pointer flex-col items-center justify-end rounded-2xl py-4 shadow-lg transition-all duration-300",
+        isPreview ? "bg-[#0F0A4CCC]" : "bg-[#6479BCE5]",
       )}
     >
-      <img src={team.image} alt={team.name} />
-
-      <h3 className="text-2xl text-center font-bold">{team.name}</h3>
+      <img
+        src={team.image}
+        alt={team.name}
+        className="absolute bottom-[35%] h-full w-full max-w-none scale-125 transform drop-shadow-lg filter"
+      />
+      <h3 className="z-10 text-[12px] font-bold text-white sm:text-[24px] lg:text-[32px] xl:text-[64px]">
+        {team.name}
+      </h3>
     </div>
   );
 };
