@@ -6,7 +6,12 @@ type FlowerProps = {
   delay: number;
 } & HTMLMotionProps<"img">;
 
-const Flower: React.FC<FlowerProps> = ({ className, colorFlower, delay, ...rest }) => {
+const Flower: React.FC<FlowerProps> = ({
+  className,
+  colorFlower,
+  delay,
+  ...rest
+}) => {
   const flowerVariants = {
     initial: {
       opacity: 0,
@@ -17,13 +22,13 @@ const Flower: React.FC<FlowerProps> = ({ className, colorFlower, delay, ...rest 
       scale: 1,
       transition: {
         duration: 0.5,
-        delay: delay
+        delay: delay,
       },
     },
-  }
+  };
   return (
     <motion.img
-      className={twMerge(`absolute`, className)}
+      className={twMerge(`absolute z-[-1]`, className)}
       src={`/images/events/${colorFlower}.PNG`}
       alt={`${colorFlower}`}
       variants={flowerVariants}
