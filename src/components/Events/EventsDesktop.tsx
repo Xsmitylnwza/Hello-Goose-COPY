@@ -8,14 +8,14 @@ const EventsDesktop = () => {
     { postion: "bottom-[33%] left-[-5%] w-[12%]", colorFlower: "purple" },
   ];
   return (
-    <div className="TabletV:hidden relative  hidden h-max items-center justify-center md:block">
+    <div className="relative items-center justify-center hidden TabletV:hidden h-max md:block">
       <img
         className="mx-auto w-[87%] "
         src="/images/events/eventDesktop.png"
         alt=""
       />
-      {flowers.map(({ postion, colorFlower }) => (
-        <Flower className={postion} colorFlower={colorFlower} />
+      {flowers.map(({ postion, colorFlower }, index) => (
+        <Flower className={postion} colorFlower={colorFlower} key={index} delay={index}/>
       ))}
     </div>
   );

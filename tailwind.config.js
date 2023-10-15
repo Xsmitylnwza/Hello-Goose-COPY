@@ -61,6 +61,7 @@ export default {
         "background-about": "url('/images/about/Background.PNG')",
         "background-team": "url('/images/team/background.png')",
         "background-event": "url('/images/events/top.png')",
+        "background-game": "url('/images/game/Bg Mobile นอน.png')",
         "background-faqs":"url('/images/faqs/Bg.PNG')"
       },
     },
