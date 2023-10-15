@@ -15,7 +15,7 @@ const EventsTablet = () => {
       className="relative  bottom-0 w-[90%]  md:hidden  mobileS:hidden TabletV:block"
     >
       <img
-        className="z-1 mx-auto  "
+        className="mx-auto z-1 "
         src="/images/events/eventTablet.png"
         alt="eventTablet"
       />
@@ -24,7 +24,7 @@ const EventsTablet = () => {
           className={postion}
           colorFlower={colorFlower}
           key={index}
-          delay={index * 0.2}
+          delay={index}
         />
       ))}
     </div>

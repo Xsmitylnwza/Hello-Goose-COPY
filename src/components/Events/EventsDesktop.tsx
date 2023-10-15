@@ -15,7 +15,7 @@ const EventsDesktop = () => {
         alt=""
       />
       {flowers.map(({ postion, colorFlower }, index) => (
-        <Flower className={postion} colorFlower={colorFlower} key={index} delay={index * 0.2}/>
+        <Flower className={postion} colorFlower={colorFlower} key={index} delay={index}/>
       ))}
     </div>
   );

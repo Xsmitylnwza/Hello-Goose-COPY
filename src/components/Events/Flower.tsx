@@ -22,7 +22,7 @@ const Flower: React.FC<FlowerProps> = ({
       scale: 1,
       transition: {
         duration: 0.5,
-        delay: delay,
+        delay: delay * 0.3,
       },
     },
   };
@@ -34,7 +34,6 @@ const Flower: React.FC<FlowerProps> = ({
       variants={flowerVariants}
       initial="initial"
       whileInView="animate"
-      viewport={{ once: true }}
       {...rest}
     />
   );

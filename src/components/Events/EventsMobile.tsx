@@ -11,7 +11,7 @@ const EventsMobile = () => {
     <div className="relative flex-center h-max md:hidden">
       <img className="w-[92%]" src="/images/events/eventMobile.png" alt="" />
       {flowers.map(({ postion, colorFlower }, index) => (
-        <Flower className={postion} colorFlower={colorFlower} key={index} delay={index * 0.2}/>
+        <Flower className={postion} colorFlower={colorFlower} key={index} delay={index}/>
       ))}
     </div>
   );
