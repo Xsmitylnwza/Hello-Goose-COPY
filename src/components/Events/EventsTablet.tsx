@@ -2,17 +2,17 @@ import Flower from "./Flower";
 
 const EventsTablet = () => {
   const flowers = [
-    { postion: "left-[7%] top-[16%] w-[10%]", colorFlower: "pink" },
-    { postion: "right-[1%] top-[5%] w-[9%]", colorFlower: "orange" },
+    { postion: "left-[-2%] top-[28%] w-[14%]", colorFlower: "pink" },
+    { postion: "right-[1%] top-[25%] w-[13%]", colorFlower: "orange" },
     { postion: "bottom-[32%] right-[2%] w-[12%]", colorFlower: "pink" },
-    { postion: "bottom-[33%] left-[-5%] w-[12%]", colorFlower: "purple" },
+    { postion: "bottom-[28%] left-[-13%] w-[18%]", colorFlower: "purple" },
   ];
   return (
-    <div className="mobileS:hidden TabletV:block  relative bottom-0  w-[90%]  md:hidden ">
+    <div className="relative my-auto  w-[90%] md:hidden  mobileS:hidden  TabletV:block ">
       <img
         className="mx-auto    "
         src="/images/events/eventTablet.png"
-        alt=""
+        alt="eventTablet"
       />
       {flowers.map(({ postion, colorFlower }) => (
         <Flower className={postion} colorFlower={colorFlower} />
