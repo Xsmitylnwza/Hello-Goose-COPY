@@ -56,6 +56,7 @@ export default {
         "goose-hero": "url('/images/hero/goose-element_0004_Layer-6.png')",
         "background-about": "url('/images/about/Background.PNG')",
         "background-team": "url('/images/team/background.png')",
+        "background-event": "url('/images/events/top.png')",
       },
     },
   },
