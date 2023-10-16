@@ -22,7 +22,7 @@ const TeamDetails = ({ team }: TeamDetailsProps) => {
         {team.name}
       </h1>
       <div className="relative grid w-full h-full grid-cols-12 gap-4 p-4 px-5 mt-4">
-        <div className="text-[0.825rem] sm:text-[1.25rem] relative z-30 col-span-9 flex h-full max-h-[400px] min-h-[300px] w-full sm:items-center overflow-auto rounded-3xl bg-white bg-opacity-90 px-10 sm:p-4">
+        <div className="text-[0.825rem] sm:text-[1.25rem] relative z-30 col-span-9 flex h-full max-h-[300px] min-h-[300px] w-full sm:items-center overflow-auto rounded-3xl bg-white bg-opacity-90 px-10 sm:p-4 pb-5">
           <p className="z-50 py-8 font-itim">{team.description}</p>
         </div>
         <img
