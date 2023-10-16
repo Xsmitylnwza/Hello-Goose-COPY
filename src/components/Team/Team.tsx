@@ -19,7 +19,7 @@ const Team = forwardRef<HTMLDivElement, TeamProps>(
     return (
       <div
         className={twMerge(
-          "flex-center-col z-1 relative min-h-screen w-full bg-background-team bg-cover bg-center bg-no-repeat",
+          "flex-center-col z-1 pb-8 relative min-h-screen w-full bg-background-team bg-cover bg-center bg-no-repeat",
           className,
         )}
         {...props}

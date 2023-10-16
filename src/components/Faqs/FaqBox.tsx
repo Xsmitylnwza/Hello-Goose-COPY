@@ -1,4 +1,3 @@
-import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -35,7 +34,7 @@ const faqs: Data[] = [
   },
   {
     id: 5,
-    question: " จำเป็นต้องมีพื้นฐานก่อนที่จะเข้าร่วมโครงการหรือไม่ ",
+    question: " จำเป็นต้องมีพื้นฐานก่อนมาไหม",
     answer:
       "ไม่จำเป็นต้องมีพื้นฐานก่อนเรียน เพราะพี่ ๆ จะเริ่มสอนน้อง ๆ ตั้งแต่เริ่มต้น ถ้ามีคำถามหรือข้อสงสัยใด ๆ สามารถถามพี่ ๆ ได้เสมอ มั่นใจได้เลยว่าน้อง ๆ จะได้สนุกสนานเพลิดเพลินและซึมซับสาระความรู้ใหม่ ๆ อย่างแน่นอน!",
   },
@@ -66,7 +65,7 @@ const FaqBox = () => {
   return (
     <>
       {faqs.map((faq) => (
-        <div key={faq.id} className="p-3 mb-3 text-black bg-white rounded-lg">
+        <div key={faq.id} className="mb-3 lg:text-[1.5rem] text-[1rem] text-black bg-white rounded-lg font-itim p-3 lg:py-5">
           <div
             className="flex items-center justify-between"
             onClick={() => toggleSign(faq.id)}
@@ -74,28 +73,26 @@ const FaqBox = () => {
             <h2 className="flex-1 text-center">{faq.question}</h2>
             <span>{active === faq.id ? "-" : "+"}</span>
           </div>
-          <AnimatePresence>
-            {faq.id === active && (
-              <motion.div
-                className="p-2 m-2 border-t-2"
+
+          {faq.id === active && (
+            <motion.div
+              className="p-2 m-2 border-t-2"
+              variants={faqVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.3, type: "tween" }}
+            >
+              <motion.p
                 variants={faqVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                transition={{ duration: 0.3, type: "tween" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="text-[0.85rem]"
               >
-                <motion.p
-                  variants={faqVariants}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  {faq.answer}
-                </motion.p>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                {faq.answer}
+              </motion.p>
+            </motion.div>
+          )}
         </div>
       ))}
     </>
