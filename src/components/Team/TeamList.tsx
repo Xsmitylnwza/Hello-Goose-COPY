@@ -11,7 +11,7 @@ const TeamList = ({ onPreview, previewTeamType }: TeamListProps) => {
   const teams = getTeamTypes();
 
   return (
-    <div className="grid w-full grid-cols-4 gap-2 px-2 sm:gap-4 lg:px-52">
+    <div className="grid w-full grid-cols-4 gap-2 px-8 sm:gap-4 lg:px-[7.25rem]">
       {teams.map((team) => (
         <div key={team.id} onClick={() => onPreview(team)}>
           <TeamItem team={team} isPreview={team.id === previewTeamType?.id} />

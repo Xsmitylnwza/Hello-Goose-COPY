@@ -9,6 +9,13 @@ const GameButton = () => {
     animate: {
       opacity: 1,
       scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 17,
+        duration: 0.5,
+        delay: 0.3,
+      },
     },
     hover: {
       scale: 1.1,
@@ -36,9 +43,10 @@ const GameButton = () => {
         alt="Game Link"
         variants={gameButton}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
         whileHover="hover"
         whileTap="tap"
+        viewport={{ once: true }}
         transition={{ duration: 0.2 }}
       />
     </a>
