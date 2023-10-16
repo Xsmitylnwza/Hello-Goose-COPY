@@ -71,7 +71,7 @@ const FaqBox = () => {
             onClick={() => toggleSign(faq.id)}
           >
             <h2 className="flex-1 text-center">{faq.question}</h2>
-            <span>{active === faq.id ? "-" : "+"}</span>
+            <span className="cursor-pointer">{active === faq.id ? "-" : "+"}</span>
           </div>
 
           {faq.id === active && (
@@ -87,7 +87,7 @@ const FaqBox = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="text-[0.85rem]"
+                className="text-[1.2rem]"
               >
                 {faq.answer}
               </motion.p>
