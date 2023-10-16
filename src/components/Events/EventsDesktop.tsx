@@ -10,7 +10,7 @@ const EventsDesktop = () => {
   return (
     <div className="relative items-center justify-center hidden TabletV:hidden h-max md:block">
       <img
-        className="mx-auto w-[87%] "
+        className="mx-auto w-[87%] xl:w-[60%]"
         src="/images/events/eventDesktop.png"
         alt=""
       />
