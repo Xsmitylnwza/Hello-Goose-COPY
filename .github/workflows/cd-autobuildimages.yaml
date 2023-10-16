@@ -44,12 +44,12 @@ jobs:
         with:
           context: .
           push: true
-          tags: xsmity01/testautobuild:latest
+          tags: xsmity01/hellogoose_webpr:latest
 
       - name: push docker image tag:(version_number)
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: xsmity01/testautobuild:version${{ github.run_number }}
+          tags: xsmity01/hellogoose_webpr:version${{ github.run_number }}
             
